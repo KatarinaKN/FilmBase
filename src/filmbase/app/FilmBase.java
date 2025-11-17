@@ -1,9 +1,11 @@
 package filmbase.app;
 
 import filmbase.data.Film;
+import filmbase.data.Playlist;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class FilmBase {
     public FilmBase (){
@@ -13,10 +15,26 @@ public class FilmBase {
     public void start(){
         System.out.println("FilmBasen er startet.");
         initFilms();
-        printList(allFilms);
+        //printList(allFilms);
+        testPlaylist();
     }
 
-    private Collection<Film> allFilms = new ArrayList<>();
+    public void testPlaylist(){
+        Playlist playlist = new Playlist();
+        playlist.addToPlaylist(allFilms.get(1));
+        playlist.addToPlaylist(allFilms.get(4));
+        playlist.addToPlaylist(allFilms.get(7));
+        printList(playlist.getFilmPlaylist());
+        playlist.nextFilm();
+        playlist.playFilm();
+        printList(playlist.getFilmPlaylist());
+        playlist.playFilm();
+        printList(playlist.getFilmPlaylist());
+        playlist.playFilm();
+        printList(playlist.getFilmPlaylist());
+    }
+
+    private List<Film> allFilms = new ArrayList<>();
 
     private void initFilms(){
         allFilms.add(new Film("Min nabo Totoro", 1988));
@@ -31,7 +49,7 @@ public class FilmBase {
         allFilms.add(new Film("Niko og de flyvende rensdyr", 2008));
     }
 
-    private void printList(Collection<Film> films){
+    private void printList(List<Film> films){
         for(Film f : films){
             System.out.println(f.getTitle() + ", " + f.getYear());
         }

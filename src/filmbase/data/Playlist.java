@@ -12,14 +12,14 @@ public class Playlist {
     }
 
     //Afspiller filmen og fjerner den fra filmPlaylist.
-    public void playFilm(Film film){
-        System.out.println("Nu afspilles: " + film.getTitle());
-        filmPlaylist.remove(film);
+    public void playFilm(){
+        System.out.println("Nu afspilles: " + getFilmPlaylist().get(0).getTitle());
+        filmPlaylist.remove(getFilmPlaylist().get(0));
     }
 
     //Udskriver næste film.
     public void nextFilm(){
-        System.out.println(filmPlaylist.iterator().next());
+        System.out.println("Næste film: " + filmPlaylist.get(1).getTitle());
     }
 
     //Returnerer størrelsen på playlisten/hvor mange film, der er i listen.
