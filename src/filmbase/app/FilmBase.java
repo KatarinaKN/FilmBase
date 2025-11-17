@@ -24,6 +24,7 @@ public class FilmBase {
         playlist.addToPlaylist(allFilms.get(1));
         playlist.addToPlaylist(allFilms.get(4));
         playlist.addToPlaylist(allFilms.get(7));
+        playlist.addToPlaylist(allFilms.get(4));
         printList(playlist.getFilmPlaylist());
         playlist.nextFilm();
         playlist.playFilm();
