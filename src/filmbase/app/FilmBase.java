@@ -13,6 +13,7 @@ public class FilmBase {
     public void start(){
         System.out.println("FilmBasen er startet.");
         initFilms();
+        printList(allFilms);
     }
 
     private Collection<Film> allFilms = new ArrayList<>();
@@ -30,4 +31,9 @@ public class FilmBase {
         allFilms.add(new Film("Niko og de flyvende rensdyr", 2008));
     }
 
+    private void printList(Collection<Film> films){
+        for(Film f : films){
+            System.out.println(f.getTitle() + ", " + f.getYear());
+        }
+    }
 }
