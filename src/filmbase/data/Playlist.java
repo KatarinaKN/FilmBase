@@ -1,6 +1,5 @@
-package filmbase.app;
+package filmbase.data;
 
-import filmbase.data.Film;
 import java.util.ArrayList;
 
 public class Playlist {
