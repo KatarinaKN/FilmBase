@@ -21,18 +21,12 @@ public class FilmBase {
 
     public void testPlaylist(){
         Playlist playlist = new Playlist();
-        playlist.addToPlaylist(allFilms.get(1));
-        playlist.addToPlaylist(allFilms.get(4));
-        playlist.addToPlaylist(allFilms.get(7));
-        playlist.addToPlaylist(allFilms.get(4));
-        printList(playlist.getFilmPlaylist());
-        playlist.nextFilm();
-        playlist.playFilm();
-        printList(playlist.getFilmPlaylist());
-        playlist.playFilm();
-        printList(playlist.getFilmPlaylist());
-        playlist.playFilm();
-        printList(playlist.getFilmPlaylist());
+
+        playlist.addToPlaylist(allFilms.get(2));
+        playlist.hasNext();
+      /*  while(playlist.hasNext()){
+            playlist.playFilm();
+        }*/
     }
 
     private List<Film> allFilms = new ArrayList<>();

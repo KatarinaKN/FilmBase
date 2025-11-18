@@ -1,10 +1,13 @@
 package filmbase.data;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Playlist {
 
     ArrayList<Film> filmPlaylist = new ArrayList<>();
+
+    private int index = 0;
 
     //Tilføjer en film til filmPlaylist.
     public boolean addToPlaylist(Film film) {
@@ -57,4 +60,17 @@ public class Playlist {
             return false;
         }
     }
+
+    //Tjekker, om der er en "næste film", eller om filmkøen er tom.
+    public boolean hasNext(){
+        if (index < filmPlaylist.size()){
+            System.out.println("Du har " + numberOfFilmsInPlaylist() + " film på din playliste.");
+            return true;
+        }
+        else {
+            System.out.println("Din playliste er tom.");
+            return false;
+        }
+    }
+
 }
